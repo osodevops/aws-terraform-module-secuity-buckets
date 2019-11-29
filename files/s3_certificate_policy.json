@@ -1,9 +1,9 @@
 {
-  "Id": "Policy1429136655940",
+  "Id": "Policy8757577",
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1429136633762",
+      "Sid": "Stmt",
       "Action": [
         "s3:*"
       ],

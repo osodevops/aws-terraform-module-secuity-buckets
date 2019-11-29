@@ -1,1 +1,1 @@
-# aws-terraform-module-secuity-buckets
+# aws-terraform-module-security-buckets
