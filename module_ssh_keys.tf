@@ -11,6 +11,7 @@ resource "aws_s3_bucket_object" "pem-private" {
   bucket  = local.ssh_key_bucket_name
   key     = "id_rsa.${var.key_names[count.index]}"
   content = "${element(tls_private_key.ssh.*.private_key_pem, count.index)}"
+  depends_on = [module.keys_bucket]
 }
 
 resource "aws_s3_bucket_object" "ssh-public" {
@@ -18,4 +19,5 @@ resource "aws_s3_bucket_object" "ssh-public" {
   bucket  = local.ssh_key_bucket_name
   key     = "id_rsa.${var.key_names[count.index]}.pub"
   content = "${element(tls_private_key.ssh.*.public_key_openssh, count.index)}"
+  depends_on = [module.keys_bucket]
 }
