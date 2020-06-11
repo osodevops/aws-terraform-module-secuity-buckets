@@ -1,9 +1,9 @@
 variable "s3_bucket_force_destroy" {}
 
 variable "key_names" {
-  type = "list"
+  type = list(string)
 }
 
 variable "common_tags" {
-  type = "map"
+  type = map(string)
 }
